@@ -25,7 +25,8 @@ app.use(cookieparser());
 app.use(cors(
     {
         origin:"https://edu-nexus-frontend-dusky.vercel.app",
-        credentials:true,
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
     })
 );
 
