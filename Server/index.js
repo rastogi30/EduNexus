@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieparser());
 app.use(cors(
     {
-        origin:"http://localhost:3000",
+        origin:"https://edu-nexus-frontend-dusky.vercel.app/",
         credentials:true,
     })
 );
