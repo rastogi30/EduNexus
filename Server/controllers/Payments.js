@@ -1,6 +1,5 @@
 const { instance } = require("../config/razorpay");
 const User = require("../models/User");
-const { ObjectId } = require("mongodb");
 const Course = require("../models/Course");
 const mailSender = require("../Utils/mailSender");
 const { courseEnrollmentEmail } = require("../mail/courseEnrollmentEmail");

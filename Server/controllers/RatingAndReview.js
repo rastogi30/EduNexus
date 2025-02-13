@@ -1,7 +1,6 @@
 const RatingAndReviews=require("../models/RatingAndReview");
 const Course= require("../models/Course");
 const { default: mongoose } = require("mongoose");
-const ObjectId = mongoose.Types.ObjectId;
 
 // create rating
 exports .createRating = async (req, res) => {

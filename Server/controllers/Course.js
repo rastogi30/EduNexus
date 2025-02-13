@@ -6,7 +6,6 @@ const Section = require("../models/Section");
 const SubSection = require("../models/SubSection");
 const CourseProgress = require("../models/CourseProgress");
 const { convertSecondsToDuration } = require("../Utils/secondToDuration");
-const { miniSerializeError } = require("@reduxjs/toolkit");
 require("dotenv").config();
 
 // create Course handler function
