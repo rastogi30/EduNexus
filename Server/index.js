@@ -22,6 +22,15 @@ dataBase.connect();
 // middlewares
 app.use(express.json());
 app.use(cookieparser());
+
+// without deployment
+// app.use(cors(
+//     {
+//         origin:"http://localhost:3000",
+//     })
+// );
+
+// depeloyment..
 app.use(cors(
     {
         origin:"https://edunexus-edtech.vercel.app",

@@ -20,27 +20,27 @@ const ForgotPassword = () => {
 
 
   return (
-    <div className='text-white flex items-end justify-center relative'>
+    <div className='text-white min-h-[calc(100vh-3.5rem)] flex items-center justify-center p-4'>
         {
             loading ? ( <Spinner/>):
-            (<div className='flex flex-col items-start justify-center lg:w-[508px] lg:h-[448px] gap-[25px] absolute top-[100px] left-[550px]'>
-                <h1 className='text-[#F1F2FF] text-3xl font-bold'>
+            (<div className='max-w-[500px] w-full flex flex-col items-start justify-center gap-4 p-4 md:p-8'>
+                <h1 className='text-[#F1F2FF] text-2xl md:text-3xl font-bold'>
                     {
                         !emailSent ?"Reset Your Password" : "Check your Email"
                     }
                 </h1>
 
-                <p className='lg:w-[448px] text-[#AFB2BF] text-lg font-inter'>
+                <p className='text-[#AFB2BF] text-base md:text-lg font-inter'>
                     {
-                       !emailSent ?"Have no fear. We'll email you instruction to reset your pssword. If you dont have access to your email we can try account recovery" :
+                       !emailSent ?"Have no fear. We'll email you instructions to reset your password. If you don't have access to your email we can try account recovery" :
                         `We have sent the reset email to ${email}`
                     } 
                 </p>
-                <form onSubmit={handleOnSubmit}>
+                <form onSubmit={handleOnSubmit} className='w-full'>
                     {
                         !emailSent && (
-                            <label>
-                                <p>Email Address*</p>
+                            <label className='w-full'>
+                                <p className='mb-1 text-richblack-5'>Email Address*</p>
                                 <input
                                     required
                                     type='email'
@@ -48,26 +48,25 @@ const ForgotPassword = () => {
                                     value={email}
                                     onChange={(e)=>setEmail(e.target.value)}
                                     placeholder='Enter Your Email Address'
-                                    className='bg-[#161D29] p-[12px] w-[444px] text-white rounded-[8px]'
+                                    className='w-full bg-[#161D29] p-3 rounded-[8px] text-white'
                                 />
                             </label>
                         )
                     }
-                    <button type='submit'
-                    className="text-center text-[13px] px-6 py-3 rounded-md font-bold bg-yellow-50 text-black hover:scale-95 transition-all duration-200 shadow-md shadow-richblack-100 mt-7 lg:w-[444px]">
+                    <button 
+                        type='submit'
+                        className="w-full text-center mt-6 px-6 py-3 rounded-md font-bold bg-yellow-50 text-black hover:scale-95 transition-all duration-200"
+                    >
                         {
                             !emailSent ? "Reset Password" : "Resend Email"
                         }
                     </button>
                 </form>
 
-                <div>
-                    <Link to={"/login"}  className='flex flex-row items-center justify-center gap-2'>
+                <Link to="/login" className='flex items-center gap-2 text-richblack-5 mt-2'>
                     <FaArrowLeft/>
-                        <p>Back to Login</p>
-                    </Link>
-
-                </div>
+                    <p>Back to Login</p>
+                </Link>
             </div>)
         }
     </div>
