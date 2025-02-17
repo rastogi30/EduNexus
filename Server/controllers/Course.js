@@ -45,7 +45,7 @@ exports.createCourse = async(req,res)=>{
         // validation
       if(!courseName || !courseDescription || !whatYouWillLearn || !price ||
            !thumbnail ||
-          !category || !tag.length || !instructions.length )
+          !category || !instructions.length )
         {
             return res.status(400).json({
                 success:false,
